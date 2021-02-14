@@ -13,7 +13,7 @@ echo ** Tag Image **
 docker tag ${IMAGE}:latest azormpas/${IMAGE}:latest
 
 echo ** Push Image **
-docker push azormpas/%IMAGE%:latest
+docker push azormpas/${IMAGE}:latest
 
 echo **********************
 echo Finished
