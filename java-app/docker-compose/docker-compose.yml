@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  car-db:
+    image: mysql:8.0.22
+    hostname: car-db
+    container_name: car-db-container
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_DATABASE: car_db
+    volumes:
+      - my-data:/var/lib/mysql
+    networks:
+      - test_1
+
+  car-shop-app:
+    image: azormpas/car-shop:latest
+    build: ./..
+    hostname: car-shop
+    container_name: car-shop-container
+    depends_on:
+      - car-db
+    ports:
+      - 8080:8080
+    networks:
+      - test_1
+
+volumes:
+  my-data:
+
+networks:
+  test_1:
