@@ -1,2 +1,2 @@
 # jenkins-spring-boot-app
-Create Jenkins file that will automate the deployment process (CI/CD).
+Create a Jenkinsfile, automating the deployment process (building/testing/pushing docker image/deploying remotly/ CI/CD).
